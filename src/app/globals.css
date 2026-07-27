@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
+/* Casaly brand tokens — purple + cool neutrals, matching the app's
+   theme (see pms-mern/frontend/src/App.css). */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f5f5f8;
+  --foreground: #17181c;
+  --card: #ffffff;
+  --card-border: #e2e3e8;
+  --muted: #5a5e72;
+  --primary: #6840c6;
+  --primary-dark: #4a2f96;
+  --primary-foreground: #ffffff;
+  --secondary: #efe9ff;
+  --accent: #eee8ff;
+  --chart-blue: #3b82f6;
+  --chart-amber: #e7a33c;
+  --chart-green: #1f9254;
+  --chart-red: #d64545;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-border: var(--card-border);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-chart-blue: var(--chart-blue);
+  --color-chart-amber: var(--chart-amber);
+  --color-chart-green: var(--chart-green);
+  --color-chart-red: var(--chart-red);
+  --font-sans: var(--font-montserrat);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
