@@ -1,10 +1,10 @@
 import { CheckCircle2Icon, SparklesIcon } from "lucide-react";
 
 const rows = [
-  { room: "P.101 — Deluxe", guest: "Nguyễn Văn A", status: "Đang ở", tone: "bg-chart-blue" },
-  { room: "P.102 — Superior", guest: "Trần Thị B", status: "Trống", tone: "bg-chart-green" },
+  { room: "P.101 — Deluxe", guest: "Nguyễn Văn A", status: "Đang ở", tone: "bg-primary" },
+  { room: "P.102 — Superior", guest: "Trần Thị B", status: "Trống", tone: "bg-chart-avocado" },
   { room: "P.103 — Suite", guest: "Lê Văn C", status: "Dọn phòng", tone: "bg-chart-amber" },
-  { room: "P.104 — Deluxe", guest: "Phạm Thị D", status: "Đang ở", tone: "bg-chart-blue" },
+  { room: "P.104 — Deluxe", guest: "Phạm Thị D", status: "Đang ở", tone: "bg-primary" },
 ];
 
 /** Decorative, static dashboard mockup for the hero — not a real screenshot. */
@@ -15,7 +15,7 @@ export function HeroMockup() {
         <div className="flex items-center gap-2 border-b border-card-border bg-background px-5 py-3">
           <span className="h-2.5 w-2.5 rounded-full bg-chart-red/60" />
           <span className="h-2.5 w-2.5 rounded-full bg-chart-amber/60" />
-          <span className="h-2.5 w-2.5 rounded-full bg-chart-green/60" />
+          <span className="h-2.5 w-2.5 rounded-full bg-chart-moss/60" />
           <span className="ml-3 text-xs font-medium text-muted">app.casaly.vn</span>
         </div>
         <div className="grid grid-cols-1 divide-y divide-card-border md:grid-cols-[1fr_auto]">
@@ -37,7 +37,7 @@ export function HeroMockup() {
       </div>
 
       <div className="absolute -left-4 top-10 hidden w-52 rounded-lg border border-card-border bg-card p-4 shadow-lg md:block">
-        <div className="flex items-center gap-2 text-chart-green">
+        <div className="flex items-center gap-2 text-primary">
           <CheckCircle2Icon className="h-4 w-4" />
           <p className="text-xs font-bold">Đồng bộ Airbnb thành công</p>
         </div>

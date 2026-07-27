@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 
@@ -20,6 +20,11 @@ export const metadata: Metadata = {
     locale: "vi_VN",
     type: "website",
   },
+};
+
+/** Thanh địa chỉ trên mobile lấy màu thương hiệu (xanh lục bảo). */
+export const viewport: Viewport = {
+  themeColor: "#0b7a55",
 };
 
 export default function RootLayout({

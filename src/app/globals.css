@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
-/* Casaly brand tokens — purple + cool neutrals, matching the app's
-   theme (see pms-mern/frontend/src/App.css). */
+/* Casaly brand tokens — hệ màu Hành Mộc: xanh lục bảo (chủ đạo), xanh rêu
+   và xanh bơ làm màu phụ. Giữ đồng bộ với pms-mern/frontend/src/App.css. */
 :root {
-  --background: #f5f5f8;
-  --foreground: #17181c;
+  --background: #f3f6f3;
+  --foreground: #14201a;
   --card: #ffffff;
-  --card-border: #e2e3e8;
-  --muted: #5a5e72;
-  --primary: #6840c6;
-  --primary-dark: #4a2f96;
+  --card-border: #dce4de;
+  --muted: #55655c;
+  --primary: #0b7a55;
+  --primary-dark: #075c40;
   --primary-foreground: #ffffff;
-  --secondary: #efe9ff;
-  --accent: #eee8ff;
-  --chart-blue: #3b82f6;
+  --secondary: #d3e9de;
+  --accent: #e9f2df;
+  --chart-moss: #4f7942;
+  --chart-avocado: #7ea046;
   --chart-amber: #e7a33c;
-  --chart-green: #1f9254;
   --chart-red: #d64545;
 }
 
@@ -30,9 +30,9 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
-  --color-chart-blue: var(--chart-blue);
+  --color-chart-moss: var(--chart-moss);
+  --color-chart-avocado: var(--chart-avocado);
   --color-chart-amber: var(--chart-amber);
-  --color-chart-green: var(--chart-green);
   --color-chart-red: var(--chart-red);
   --font-sans: var(--font-montserrat);
 }
