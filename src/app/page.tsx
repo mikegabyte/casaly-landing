@@ -30,7 +30,7 @@ const useCases = [
     icon: HomeIcon,
     title: "Homestay & Airbnb",
     description:
-      "Đồng bộ lịch đặt phòng từ Airbnb, Beds24 về một nơi duy nhất — không còn lo trùng lịch giữa các kênh.",
+      "Gom lịch đặt phòng từ Airbnb, Beds24 qua iCal về một nơi duy nhất — không còn lo trùng lịch giữa các kênh.",
   },
   {
     icon: BuildingIcon,
@@ -48,8 +48,8 @@ const features = [
   },
   {
     icon: RefreshCwIcon,
-    title: "Đồng bộ Airbnb & Beds24",
-    description: "Đặt phòng từ các kênh OTA tự động đổ về hệ thống, không cần nhập tay, không lo trùng lịch.",
+    title: "Đồng bộ lịch OTA hai chiều",
+    description: "Nối qua iCal hoặc Beds24: đặt phòng từ kênh tự đổ về, lịch của bạn cũng phát ngược ra kênh — không nhập tay, không trùng lịch.",
   },
   {
     icon: ShieldCheckIcon,
@@ -58,8 +58,8 @@ const features = [
   },
   {
     icon: WalletIcon,
-    title: "Kế toán thu — chi",
-    description: "Theo dõi doanh thu, hoa hồng, thuế và lợi nhuận ròng theo từng đặt phòng hoặc theo tháng.",
+    title: "Sổ thu — chi",
+    description: "Ghi nhận từng khoản thu, khoản chi gắn với đặt phòng hoặc cơ sở, xem tổng kết theo tháng.",
   },
   {
     icon: UsersIcon,
@@ -73,33 +73,36 @@ const features = [
   },
 ];
 
-// TODO: nội dung tạm — cập nhật copy thật cho từng bước khi có.
 const steps = [
   {
     step: "Bước 01",
-    title: "Tạo tài khoản",
-    description: "Placeholder — mô tả cách đăng ký workspace cho cơ sở của bạn.",
+    title: "Đặt lịch demo",
+    description:
+      "Gọi Zalo hoặc nhắn tin, 30 phút xem thử trên dữ liệu mẫu. Chúng tôi tạo sẵn tài khoản cho cơ sở của bạn, không phải tự khai báo gì.",
     icon: UserPlusIcon,
     tone: "bg-secondary text-primary",
   },
   {
     step: "Bước 02",
-    title: "Thêm cơ sở & phòng",
-    description: "Placeholder — mô tả cách khai báo cơ sở, loại phòng, giá.",
+    title: "Khai báo cơ sở & phòng",
+    description:
+      "Danh sách hướng dẫn từng bước ngay trong phần mềm: thêm cơ sở, hạng phòng, giá. Đang dùng phần mềm khác thì chúng tôi chuyển dữ liệu giúp.",
     icon: DoorOpenIcon,
     tone: "bg-accent text-primary",
   },
   {
     step: "Bước 03",
-    title: "Kết nối kênh đặt phòng",
-    description: "Placeholder — mô tả bước đồng bộ Airbnb/Beds24.",
+    title: "Nối lịch với kênh OTA",
+    description:
+      "Dán link iCal từ Airbnb, Booking.com hoặc nối Beds24. Đặt phòng từ kênh tự đổ về, lịch của bạn cũng phát ngược ra kênh.",
     icon: PlugZapIcon,
     tone: "bg-secondary text-primary",
   },
   {
     step: "Bước 04",
     title: "Vận hành hằng ngày",
-    description: "Placeholder — mô tả trải nghiệm dùng hằng ngày sau khi setup xong.",
+    description:
+      "Lễ tân có tài khoản riêng, chỉ thấy đúng phần việc của mình. Khách nước ngoài cần khai báo tạm trú thì xuất file trong một lần bấm.",
     icon: RocketIcon,
     tone: "bg-accent text-primary",
   },
@@ -123,7 +126,7 @@ export default function Home() {
             href="#lien-he"
             className="rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md"
           >
-            Dùng thử miễn phí
+            Đặt lịch demo
           </a>
         </div>
       </header>
@@ -159,7 +162,7 @@ export default function Home() {
                   href="#lien-he"
                   className="rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md"
                 >
-                  Dùng thử miễn phí
+                  Đặt lịch demo 30 phút
                 </a>
                 <a
                   href="#tinh-nang"
@@ -256,14 +259,23 @@ export default function Home() {
               Sẵn sàng đơn giản hoá vận hành lưu trú?
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-primary-foreground/80 text-balance">
-              Đăng ký dùng thử miễn phí, không cần thẻ tín dụng.
+              Nhắn Zalo để đặt lịch demo 30 phút. Sau buổi demo, chúng tôi tạo sẵn
+              tài khoản kèm dữ liệu mẫu để bạn dùng thử.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <a
-                href="mailto:hello@casaly.vn"
+                href="https://zalo.me/0785497999"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-md bg-white px-6 py-3 text-sm font-semibold text-primary shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md"
               >
-                Liên hệ với chúng tôi
+                Nhắn Zalo 0785 497 999
+              </a>
+              <a
+                href="mailto:contact@casaly.vn"
+                className="rounded-md border border-primary-foreground/30 px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10"
+              >
+                contact@casaly.vn
               </a>
             </div>
           </Reveal>
