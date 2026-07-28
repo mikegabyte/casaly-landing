@@ -1,0 +1,18 @@
+{
+  // Trang này thuần tĩnh (next.config.ts đặt output: "export"), nên deploy
+  // dạng Worker chỉ phục vụ assets — không có "main", không cần OpenNext.
+  //
+  // Thiếu file này, Cloudflare tự nhận diện Next.js rồi chạy
+  // `opennextjs-cloudflare build` (đường dành cho app SSR). Đường đó đòi
+  // .next/standalone — thứ mà bản xuất tĩnh không hề tạo ra — nên build chết
+  // ở bước "Bundling cache assets" với ENOENT pages-manifest.json.
+  //
+  // "name" phải trùng tên project trên dashboard Cloudflare, nếu không
+  // `wrangler deploy` sẽ đẩy sang một Worker khác.
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "casaly-landing",
+  "compatibility_date": "2026-07-28",
+  "assets": {
+    "directory": "./out"
+  }
+}
