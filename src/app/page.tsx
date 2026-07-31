@@ -259,15 +259,24 @@ export default function Home() {
               Sẵn sàng đơn giản hoá vận hành lưu trú?
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-primary-foreground/80 text-balance">
-              Nhắn Zalo để đặt lịch demo 30 phút. Sau buổi demo, chúng tôi tạo sẵn
-              tài khoản kèm dữ liệu mẫu để bạn dùng thử.
+              Muốn xem trước giao diện thì tự vào demo, dữ liệu mẫu làm mới mỗi
+              ngày. Muốn tư vấn giá theo đúng số phòng thì nhắn Zalo, 30 phút
+              chúng tôi tạo sẵn tài khoản cho cơ sở của bạn.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+              <a
+                href="https://demo.casaly.vn/demo-login"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-md bg-white px-6 py-3 text-sm font-semibold text-primary shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md"
+              >
+                Xem demo trực tiếp
+              </a>
               <a
                 href="https://zalo.me/0785497999"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-md bg-white px-6 py-3 text-sm font-semibold text-primary shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md"
+                className="rounded-md border border-primary-foreground/30 px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10"
               >
                 Nhắn Zalo 0785 497 999
               </a>
