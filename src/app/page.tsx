@@ -54,7 +54,7 @@ const features = [
   {
     icon: ShieldCheckIcon,
     title: "Khai báo tạm trú tự động",
-    description: "Tự động tổng hợp thông tin khách nước ngoài cần khai báo, xuất file nộp cơ quan chức năng trong 1 click.",
+    description: "Tự động tổng hợp thông tin khách trong nước lẫn nước ngoài cần khai báo, xuất file nộp cơ quan chức năng trong 1 click.",
   },
   {
     icon: WalletIcon,
@@ -102,7 +102,7 @@ const steps = [
     step: "Bước 04",
     title: "Vận hành hằng ngày",
     description:
-      "Lễ tân có tài khoản riêng, chỉ thấy đúng phần việc của mình. Khách nước ngoài cần khai báo tạm trú thì xuất file trong một lần bấm.",
+      "Lễ tân có tài khoản riêng, chỉ thấy đúng phần việc của mình. Khách nào cần khai báo tạm trú — trong nước hay nước ngoài — thì xuất file trong một lần bấm.",
     icon: RocketIcon,
     tone: "bg-accent text-primary",
   },
@@ -111,37 +111,38 @@ const steps = [
 export default function Home() {
   return (
     <>
-      <header className="sticky top-0 z-50 border-b border-card-border/70 bg-background/80 backdrop-blur-md">
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-          <Link href="/" className="flex items-center gap-2 font-extrabold text-lg tracking-tight">
-            <CasalyIcon className="h-6 w-6 text-primary" />
-            Casaly
-          </Link>
-          <nav className="hidden items-center gap-8 text-sm font-medium text-muted md:flex">
-            <a href="#giai-phap" className="hover:text-foreground transition-colors">Giải pháp</a>
-            <a href="#tinh-nang" className="hover:text-foreground transition-colors">Tính năng</a>
-            <a href="#lien-he" className="hover:text-foreground transition-colors">Liên hệ</a>
-          </nav>
-          <a
-            href="#lien-he"
-            className="rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md"
-          >
-            Đặt lịch demo
-          </a>
+      <div className="relative isolate overflow-hidden">
+        <div aria-hidden className="hero-aurora-base pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+          <div className="hero-aurora absolute -inset-x-1/4 -top-1/3 aspect-square" />
+          <div className="hero-grid absolute inset-0" />
         </div>
-      </header>
 
-      <main className="flex-1">
+        <header className="sticky top-0 z-50">
+          <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
+            <Link href="/" className="flex items-center gap-2.5 font-extrabold text-2xl tracking-tight">
+              <CasalyIcon className="h-8 w-8 text-primary" />
+              Casaly
+            </Link>
+            <nav className="hidden items-center gap-8 text-base font-medium text-muted md:flex">
+              <a href="#giai-phap" className="hover:text-foreground transition-colors">Giải pháp</a>
+              <a href="#tinh-nang" className="hover:text-foreground transition-colors">Tính năng</a>
+              <a href="#lien-he" className="hover:text-foreground transition-colors">Liên hệ</a>
+            </nav>
+            <a
+              href="#lien-he"
+              className="rounded-md bg-primary px-5 py-2.5 text-base font-semibold text-primary-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md"
+            >
+              Liên hệ ngay
+            </a>
+          </div>
+        </header>
+
         {/* Hero */}
-        <section className="relative overflow-hidden px-6 pt-20 pb-16 md:pt-28">
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-x-0 -top-40 -z-10 h-[560px] bg-[radial-gradient(60%_60%_at_50%_0%,var(--secondary)_0%,transparent_70%)]"
-          />
+        <section className="relative px-6 pt-20 pb-16 md:pt-28">
           <div className="mx-auto max-w-3xl text-center">
             <Reveal>
               <span className="inline-flex items-center rounded-full border border-card-border bg-card px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
-                Phần mềm quản lý lưu trú
+                Phần mềm Việt · dành riêng cho thị trường Việt Nam
               </span>
             </Reveal>
             <Reveal delay={0.08}>
@@ -152,8 +153,8 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.16}>
               <p className="mx-auto mt-6 max-w-xl text-lg text-muted text-balance">
-                Casaly gộp đặt phòng, phòng, khách hàng, thu chi và khai báo tạm trú
-                vào một nơi duy nhất — xây dựng riêng cho thị trường Việt Nam.
+                Casaly kết hợp đặt phòng, phòng, khách hàng, thu chi và khai báo tạm trú
+                vào một nơi duy nhất — sinh ra cho cách vận hành lưu trú ở Việt Nam.
               </p>
             </Reveal>
             <Reveal delay={0.24}>
@@ -179,6 +180,11 @@ export default function Home() {
           </Reveal>
         </section>
 
+        {/* Fade the aurora/grid into the flat page background before the next section */}
+        <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-background" />
+      </div>
+
+      <main className="flex-1">
         {/* Use cases */}
         <section id="giai-phap" className="scroll-mt-20 px-6 py-20 md:py-28">
           <div className="mx-auto max-w-6xl">
@@ -209,14 +215,17 @@ export default function Home() {
         </section>
 
         {/* Features */}
-        <section id="tinh-nang" className="scroll-mt-20 bg-card px-6 py-20 md:py-28">
+        <section
+          id="tinh-nang"
+          className="scroll-mt-20 px-6 py-20 md:py-28 bg-[linear-gradient(to_bottom,var(--background)_0%,var(--card)_15%,var(--card)_85%,var(--background)_100%)]"
+        >
           <div className="mx-auto max-w-6xl">
             <Reveal className="mx-auto max-w-xl text-center">
               <h2 className="text-3xl font-extrabold tracking-tight text-balance md:text-4xl">
                 Mọi thứ bạn cần để vận hành, tại một nơi
               </h2>
               <p className="mt-4 text-muted text-balance">
-                Từ đặt phòng đến kế toán — không cần chuyển qua lại giữa nhiều công cụ.
+                Từ đặt phòng, vận hành, quản lý đến kế toán — không cần chuyển qua lại giữa nhiều công cụ.
               </p>
             </Reveal>
 
@@ -237,6 +246,32 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Beds24 spotlight */}
+        <section className="px-6 py-20 md:py-28">
+          <Reveal className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-card-border bg-card p-8 shadow-sm md:p-12">
+            <div className="flex flex-col items-start gap-8 md:flex-row md:items-center">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-secondary text-primary">
+                <PlugZapIcon className="h-7 w-7" />
+              </div>
+              <div>
+                <span className="text-xs font-semibold uppercase tracking-wider text-primary">
+                  Tích hợp riêng
+                </span>
+                <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-balance md:text-3xl">
+                  Nối thẳng với Beds24 — không chỉ qua iCal
+                </h2>
+                <p className="mt-4 max-w-2xl text-muted leading-relaxed text-balance">
+                  Với các kênh khác, Casaly đồng bộ qua iCal như mọi phần mềm cùng
+                  loại. Riêng Beds24, Casaly nhận webhook trực tiếp: đặt phòng mới
+                  đổ về ngay lập tức, không phải chờ chu kỳ làm mới 3-5 phút như
+                  cách đồng bộ iCal thông thường. Đang dùng Beds24 và muốn chuyển
+                  qua một hệ thống quản lý đầy đủ hơn — Casaly chuyển dữ liệu giúp.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+        </section>
+
         {/* Stacking steps — cards pile on top of each other while scrolling */}
         <section className="px-6 pb-24 pt-4 md:pb-32">
           <Reveal className="mx-auto max-w-xl text-center">
@@ -244,7 +279,7 @@ export default function Home() {
               Bắt đầu chỉ trong 4 bước
             </h2>
             <p className="mt-4 text-muted text-balance">
-              Nội dung minh hoạ — sẽ cập nhật copy thật cho từng bước.
+              Từ buổi demo đầu tiên đến vận hành hằng ngày — không cần đội IT hỗ trợ.
             </p>
           </Reveal>
           <div className="mt-14">
@@ -259,8 +294,8 @@ export default function Home() {
               Sẵn sàng đơn giản hoá vận hành lưu trú?
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-primary-foreground/80 text-balance">
-              Muốn xem trước giao diện thì tự vào demo, dữ liệu mẫu làm mới mỗi
-              ngày. Muốn tư vấn giá theo đúng số phòng thì nhắn Zalo, 30 phút
+              Muốn xem trước giao diện, click vào Xem demo, dữ liệu mẫu làm mới mỗi ngày.
+              Muốn tư vấn giá theo đúng số phòng, nhắn Zalo, 30 phút
               chúng tôi tạo sẵn tài khoản cho cơ sở của bạn.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -291,10 +326,10 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="border-t border-card-border px-6 py-10">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-sm text-muted md:flex-row">
-          <div className="flex items-center gap-2 font-bold text-foreground">
-            <CasalyIcon className="h-5 w-5 text-primary" />
+      <footer className="border-t border-card-border px-6 py-12">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-base text-muted md:flex-row">
+          <div className="flex items-center gap-2.5 text-xl font-extrabold text-foreground">
+            <CasalyIcon className="h-8 w-8 text-primary" />
             Casaly
           </div>
           <p>© {new Date().getFullYear()} Casaly. Đã đăng ký bản quyền.</p>

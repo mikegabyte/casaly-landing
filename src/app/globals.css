@@ -41,6 +41,41 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Hero background: slow-spinning pastel wash under a white graph-paper grid */
+.hero-aurora-base {
+  background: #fbfcfb;
+}
+
+.hero-aurora {
+  background: conic-gradient(
+    from 0deg at 50% 35%,
+    color-mix(in srgb, var(--secondary) 55%, white) 0deg,
+    color-mix(in srgb, var(--accent) 55%, white) 90deg,
+    color-mix(in srgb, var(--chart-avocado) 35%, white) 160deg,
+    color-mix(in srgb, var(--secondary) 55%, white) 220deg,
+    color-mix(in srgb, var(--accent) 55%, white) 300deg,
+    color-mix(in srgb, var(--secondary) 55%, white) 360deg
+  );
+  filter: blur(90px) saturate(1.05);
+  opacity: 0.55;
+  animation: hero-aurora-spin 9s linear infinite;
+}
+
+@keyframes hero-aurora-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.9) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -49,5 +84,9 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .hero-aurora {
+    animation: none;
   }
 }
