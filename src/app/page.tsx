@@ -299,19 +299,19 @@ export default function Home() {
               chúng tôi tạo sẵn tài khoản cho cơ sở của bạn.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <a
+              {/* <a
                 href="https://demo.casaly.vn/demo-login"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-md bg-white px-6 py-3 text-sm font-semibold text-primary shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md"
               >
                 Xem demo trực tiếp
-              </a>
+              </a> */}
               <a
                 href="https://zalo.me/0785497999"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-md border border-primary-foreground/30 px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10"
+                className="rounded-md bg-white px-6 py-3 text-sm font-semibold text-primary shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md"
               >
                 Nhắn Zalo 0785 497 999
               </a>
